@@ -20,10 +20,10 @@ router.get("/",(req, res) => {
                     movie: movie.map((movie: any) => ({
                         ...movie,
                         Star: star.filter((star : any) => star.mid === movie.id).map((star: any) => ({
-                            pid: star.pid,
+                            ...star,
                         })),
                         Creator: creator.filter((creator: any) => creator.mid === movie.id).map((creator: any) => ({
-                            pid: creator.pid,
+                            ...creator,
                         }))
                     }))
                 })
